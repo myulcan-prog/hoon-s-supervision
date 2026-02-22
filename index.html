@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>훈스아카데미 — ABA 온라인 수퍼비전</title>
-  <meta name="description" content="센터 실습 없이도 ABA 실무 역량을 키울 수 있는 온라인 수퍼비전 프로그램. 6개월 체계적 커리큘럼으로 기초부터 심화까지." />
+  <meta name="description" content="센터 실습 없이도 ABA 실무 역량을 키울 수 있는 온라인 수퍼비전 프로그램." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #FAFAF7;
@@ -29,7 +29,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -42,10 +41,7 @@
       overflow-x: hidden;
     }
 
-    ::selection {
-      background: var(--accent);
-      color: white;
-    }
+    ::selection { background: var(--accent); color: white; }
 
     /* ===== NAV ===== */
     nav {
@@ -94,28 +90,6 @@
     }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(45,90,39,0.25); }
 
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
-      position: relative;
-    }
-    .mobile-menu-btn span {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--text);
-      position: absolute;
-      left: 6px;
-      transition: 0.3s;
-    }
-    .mobile-menu-btn span:nth-child(1) { top: 10px; }
-    .mobile-menu-btn span:nth-child(2) { top: 16px; }
-    .mobile-menu-btn span:nth-child(3) { top: 22px; }
-
     /* ===== HERO ===== */
     .hero {
       min-height: 100vh;
@@ -130,14 +104,6 @@
       top: -200px; right: -200px;
       width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(45,90,39,0.06) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px; left: -100px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 70%);
       border-radius: 50%;
     }
     .hero-inner {
@@ -239,9 +205,7 @@
       border-color: var(--accent);
       color: var(--accent);
     }
-    .btn-arrow {
-      transition: transform 0.2s;
-    }
+    .btn-arrow { transition: transform 0.2s; }
     .btn:hover .btn-arrow { transform: translateX(3px); }
 
     .hero-stats {
@@ -300,390 +264,41 @@
       line-height: 1.8;
     }
 
-    /* ===== PROBLEM SECTION ===== */
-    .problem { background: var(--surface); }
-    .problem-grid {
+    /* ===== DIFFERENCE ===== */
+    .difference { background: var(--surface); }
+    .diff-grid {
+      margin-top: 56px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
-      margin-top: 56px;
+      max-width: 900px;
     }
-    .problem-card {
-      padding: 36px 32px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .problem-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 3px;
-      background: linear-gradient(90deg, var(--accent-warm), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .problem-card:hover {
-      border-color: var(--accent-warm);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    .problem-card:hover::before { opacity: 1; }
-    .problem-icon {
-      width: 48px; height: 48px;
-      background: var(--accent-warm-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-    }
-    .problem-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-    .problem-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    /* ===== SOLUTION SECTION ===== */
-    .solution-highlight {
-      background: linear-gradient(135deg, var(--accent) 0%, #3A7033 100%);
-      border-radius: var(--radius);
-      padding: 56px;
-      color: white;
-      margin-top: 56px;
-      position: relative;
-      overflow: hidden;
-    }
-    .solution-highlight::before {
-      content: '';
-      position: absolute;
-      top: -50%; right: -20%;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
-      border-radius: 50%;
-    }
-    .solution-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      position: relative;
-      z-index: 1;
-    }
-    .solution-item h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .solution-item h4 span {
-      width: 28px; height: 28px;
-      background: rgba(255,255,255,0.15);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.82rem;
-      flex-shrink: 0;
-    }
-    .solution-item p {
-      font-size: 0.88rem;
-      opacity: 0.85;
-      line-height: 1.7;
-      padding-left: 38px;
-    }
-
-    /* ===== TARGET SECTION ===== */
-    .target { background: var(--surface); }
-    .target-list {
-      margin-top: 48px;
-      display: grid;
-      gap: 16px;
-      max-width: 720px;
-    }
-    .target-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 24px 28px;
-      background: var(--bg);
-      border-radius: var(--radius-sm);
-      transition: all 0.2s;
-    }
-    .target-item:hover { transform: translateX(4px); }
-    .target-check {
-      width: 24px; height: 24px;
-      background: var(--accent-light);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .target-check svg { width: 12px; height: 12px; }
-    .target-item p {
-      font-size: 0.95rem;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    /* ===== CURRICULUM ===== */
-    .curriculum-timeline {
-      margin-top: 56px;
-      display: grid;
-      gap: 32px;
-    }
-    .curriculum-phase {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-    .phase-label {
-      position: sticky;
-      top: 100px;
-    }
-    .phase-tag {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 0.75rem;
+    .diff-col-label {
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 20px;
     }
-    .phase-tag.basic { background: #E8F5E9; color: #2E7D32; }
-    .phase-tag.mid { background: #FFF3E0; color: #E65100; }
-    .phase-tag.adv { background: #FCE4EC; color: #C62828; }
-    .phase-period {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-      font-weight: 500;
+    .diff-col-label.old { color: var(--text-muted); }
+    .diff-col-label.new { color: var(--accent); }
+    .diff-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-light);
     }
-    .phase-sessions {
-      display: grid;
-      gap: 12px;
-    }
-    .session-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 24px 28px;
-      display: grid;
-      grid-template-columns: 40px 1fr auto;
-      gap: 16px;
-      align-items: center;
-      transition: all 0.25s;
-    }
-    .session-card:hover {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-sm);
-    }
-    .session-num {
-      width: 40px; height: 40px;
-      background: var(--bg);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.9rem;
-      color: var(--accent);
-    }
-    .session-info h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .session-info p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .session-type {
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 100px;
-      white-space: nowrap;
-    }
-    .type-paper { background: #EDE7F6; color: #5E35B1; }
-    .type-practice { background: #E3F2FD; color: #1565C0; }
-    .type-skill { background: #FFF8E1; color: #F57F17; }
-    .type-total { background: #FCE4EC; color: #C62828; }
-
-    /* ===== FLOW SECTION ===== */
-    .flow { background: var(--surface); }
-    .flow-steps {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-    .flow-steps::before {
-      content: '';
-      position: absolute;
-      top: 40px;
-      left: 12.5%;
-      right: 12.5%;
-      height: 2px;
-      background: var(--border);
-      z-index: 0;
-    }
-    .flow-step {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    .flow-num {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      background: var(--surface);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 1.6rem;
-    }
-    .flow-step h4 {
+    .diff-item h4 {
       font-size: 0.92rem;
       font-weight: 700;
       margin-bottom: 6px;
     }
-    .flow-step p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      padding: 0 8px;
-      line-height: 1.6;
-    }
-
-    /* ===== OUTCOME ===== */
-    .outcome-grid {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .outcome-card {
-      padding: 32px;
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: all 0.25s;
-    }
-    .outcome-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-    .outcome-emoji {
-      font-size: 1.8rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .outcome-card h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .outcome-card p {
+    .diff-item p {
       font-size: 0.88rem;
       color: var(--text-secondary);
       line-height: 1.7;
     }
-
-    /* ===== PRICING ===== */
-    .pricing { background: var(--surface); }
-    .pricing-grid {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .pricing-card {
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 40px 36px;
-      text-align: center;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .pricing-card.featured {
-      border-color: var(--accent);
-      box-shadow: var(--shadow-lg);
-    }
-    .pricing-card.featured::before {
-      content: '추천';
-      position: absolute;
-      top: -12px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: white;
-      padding: 4px 16px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 700;
-    }
-    .pricing-type {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 16px;
-    }
-    .pricing-price {
-      font-size: 2.6rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 4px;
-    }
-    .pricing-price small {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-    .pricing-original {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      text-decoration: line-through;
-      margin-bottom: 24px;
-    }
-    .pricing-features {
-      list-style: none;
-      text-align: left;
-      margin: 24px 0 32px;
-    }
-    .pricing-features li {
-      font-size: 0.88rem;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border-light);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-secondary);
-    }
-    .pricing-features li::before {
-      content: '✓';
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.85rem;
-    }
+    .diff-item.highlight h4 { color: var(--accent); }
 
     /* ===== SUPERVISOR ===== */
     .supervisor-card {
@@ -769,56 +384,6 @@
       text-decoration: none;
     }
 
-    /* ===== FAQ ===== */
-    .faq-list {
-      margin-top: 48px;
-      max-width: 720px;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-    }
-    .faq-q {
-      width: 100%;
-      text-align: left;
-      background: none;
-      border: none;
-      padding: 24px 0;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: inherit;
-      color: var(--text);
-      transition: color 0.2s;
-    }
-    .faq-q:hover { color: var(--accent); }
-    .faq-q::after {
-      content: '+';
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      transition: transform 0.3s;
-    }
-    .faq-item.open .faq-q::after {
-      transform: rotate(45deg);
-    }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-    .faq-item.open .faq-a {
-      max-height: 200px;
-      padding-bottom: 24px;
-    }
-    .faq-a p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.8;
-    }
-
     /* ===== SCROLL ANIMATIONS ===== */
     .reveal {
       opacity: 0;
@@ -832,23 +397,14 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
-      .problem-grid, .solution-grid, .flow-steps { grid-template-columns: 1fr; }
-      .flow-steps::before { display: none; }
-      .curriculum-phase { grid-template-columns: 1fr; }
-      .phase-label { position: static; }
-      .outcome-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .diff-grid { grid-template-columns: 1fr; }
       .supervisor-card { flex-direction: column; text-align: center; }
       .supervisor-tags { justify-content: center; }
       .hero-stats { gap: 32px; flex-wrap: wrap; }
-      .session-card { grid-template-columns: 40px 1fr; }
-      .session-type { grid-column: 2; justify-self: start; }
-      .solution-highlight { padding: 36px 28px; }
     }
 
     @media (max-width: 640px) {
       .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
       .hero-inner { padding: 120px 24px 60px; }
       section { padding: 72px 0; }
       .container { padding: 0 20px; }
@@ -864,31 +420,27 @@
     <div class="nav-inner">
       <div class="nav-logo">훈스<span>아카데미</span></div>
       <div class="nav-links">
-        <a href="#problem">왜 필요한가</a>
-        <a href="#curriculum">커리큘럼</a>
-        <a href="#pricing">가격</a>
-        <a href="#cta" class="nav-cta">신청하기</a>
+        <a href="#difference">차별점</a>
+        <a href="#supervisor">수퍼바이저</a>
+        <a href="#cta" class="nav-cta">문의하기</a>
       </div>
-      <button class="mobile-menu-btn" onclick="this.classList.toggle('active')" aria-label="메뉴">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-badge">🎓 1기 베타 모집 중</div>
+      <div class="hero-badge">1기 모집 준비 중</div>
       <h1>센터 실습 없이도<br><em>ABA 실무 역량</em>을<br>키울 수 있습니다</h1>
       <p class="hero-sub">
         가상 시나리오 기반 실습과 1:1 온라인 수퍼비전으로,
-        6개월 만에 센터에서 바로 일할 수 있는 기본기를 갖추세요.
+        체계적으로 실무 기본기를 쌓으세요.
       </p>
       <div class="hero-actions">
         <a href="#cta" class="btn btn-primary">
-          1기 신청하기 <span class="btn-arrow">→</span>
+          사전 문의하기 <span class="btn-arrow">→</span>
         </a>
-        <a href="#curriculum" class="btn btn-secondary">커리큘럼 살펴보기</a>
+        <a href="#difference" class="btn btn-secondary">어떻게 다른가요?</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -896,12 +448,8 @@
           <span>체계적 커리큘럼</span>
         </div>
         <div class="hero-stat">
-          <strong>12회기</strong>
-          <span>월 2회 수퍼비전</span>
-        </div>
-        <div class="hero-stat">
           <strong>1:1</strong>
-          <span>맞춤형 피드백</span>
+          <span>맞춤형 수퍼비전</span>
         </div>
         <div class="hero-stat">
           <strong>Zoom</strong>
@@ -911,321 +459,54 @@
     </div>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="problem" id="problem">
+  <!-- DIFFERENCE -->
+  <section class="difference" id="difference">
     <div class="container">
-      <span class="section-label reveal">Problem</span>
-      <h2 class="section-title reveal">이런 고민, 해본 적 있으신가요?</h2>
-      <p class="section-desc reveal">ABA를 공부하면서 가장 큰 장벽은 실습 기회의 부족입니다.</p>
-      <div class="problem-grid">
-        <div class="problem-card reveal">
-          <div class="problem-icon">🏫</div>
-          <h3>실습할 곳이 없다</h3>
-          <p>대학원에 등록했지만 막상 실습할 센터를 구하기 어렵고, 수퍼비전을 받을 수퍼바이저도 찾기 힘듭니다.</p>
-        </div>
-        <div class="problem-card reveal">
-          <div class="problem-icon">📋</div>
-          <h3>수퍼비전이 부실하다</h3>
-          <p>소개를 받아 수퍼비전을 받았는데 문제풀기만 하거나, 체계 없이 진행되어 실력이 느는 느낌이 없습니다.</p>
-        </div>
-        <div class="problem-card reveal">
-          <div class="problem-icon">👶</div>
-          <h3>실제 케이스 경험이 없다</h3>
-          <p>센터에 취업하지 않으면 실제 아동 대상 경험을 쌓을 기회가 거의 없어 자격시험 준비가 막막합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <span class="section-label reveal">What's Different</span>
+      <h2 class="section-title reveal">기존 수퍼비전과 무엇이 다른가요?</h2>
+      <p class="section-desc reveal">훈스아카데미는 실습 환경이 없는 분들을 위해 설계되었습니다.</p>
 
-  <!-- SOLUTION -->
-  <section class="solution" id="solution">
-    <div class="container">
-      <span class="section-label reveal">Solution</span>
-      <h2 class="section-title reveal">훈스아카데미의 해결 방법</h2>
-      <p class="section-desc reveal">실제 아동이 없어도, 실무 역량을 체계적으로 키울 수 있습니다.</p>
-      <div class="solution-highlight reveal">
-        <div class="solution-grid">
-          <div class="solution-item">
-            <h4><span>📖</span> 가상 시나리오 실습</h4>
-            <p>정교하게 설계된 가상 페르소나와 시나리오로 행동 관찰, 측정, 중재를 직접 연습합니다.</p>
+      <div class="diff-grid reveal">
+        <!-- 기존 -->
+        <div>
+          <div class="diff-col-label old">기존 수퍼비전</div>
+          <div class="diff-item">
+            <h4>센터에 소속돼야 실습 가능</h4>
+            <p>센터를 구하지 못하면 실습 경험을 쌓을 방법이 없습니다.</p>
           </div>
-          <div class="solution-item">
-            <h4><span>🎯</span> 1:1 맞춤 수퍼비전</h4>
-            <p>Zoom을 통한 1:1 수퍼비전으로 과제 리뷰, 피드백, 핵심 개념 토론을 진행합니다.</p>
+          <div class="diff-item">
+            <h4>수퍼바이저 구하기 어려움</h4>
+            <p>소개를 받아도 일정이 안 맞거나, 지역적으로 접근이 어렵습니다.</p>
           </div>
-          <div class="solution-item">
-            <h4><span>📈</span> 6개월 성장 커리큘럼</h4>
-            <p>기초(관찰·측정) → 중급(평가·중재) → 심화(종합 케이스)까지 단계적으로 성장합니다.</p>
+          <div class="diff-item">
+            <h4>문제풀기 위주, 체계 없음</h4>
+            <p>자격시험 문제만 풀거나, 매 회기 내용이 뒤죽박죽인 경우가 많습니다.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TARGET -->
-  <section class="target" id="target">
-    <div class="container">
-      <span class="section-label reveal">For You</span>
-      <h2 class="section-title reveal">이런 분께 추천합니다</h2>
-      <div class="target-list">
-        <div class="target-item reveal">
-          <div class="target-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p>ABA 대학원/평생교육원에 다니고 있지만 <strong>실습할 곳을 구하기 어려운</strong> 분</p>
-        </div>
-        <div class="target-item reveal">
-          <div class="target-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p>센터 근무를 하지 않아 <strong>실제 케이스 경험이 부족한</strong> 분</p>
-        </div>
-        <div class="target-item reveal">
-          <div class="target-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p>수퍼비전을 받고 있지만 <strong>내용이 부실하거나 체계가 없다고 느끼는</strong> 분</p>
-        </div>
-        <div class="target-item reveal">
-          <div class="target-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2D5A27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p>QBA/BCBA 자격 취득을 위해 <strong>실습 역량을 체계적으로 준비하고 싶은</strong> 분</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section class="flow">
-    <div class="container">
-      <span class="section-label reveal">Process</span>
-      <h2 class="section-title reveal">수퍼비전 1회기 흐름</h2>
-      <p class="section-desc reveal">매 회기 60분, 사전 학습부터 피드백 노트까지 체계적으로 진행됩니다.</p>
-      <div class="flow-steps reveal">
-        <div class="flow-step">
-          <div class="flow-num">📚</div>
-          <h4>사전 학습</h4>
-          <p>논문 읽기 또는 시나리오·영상 시청 (30~60분)</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-num">✏️</div>
-          <h4>과제 제출</h4>
-          <p>ABC 기록, 중재 계획, DTT 의사결정 등</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-num">💬</div>
-          <h4>수퍼비전 60분</h4>
-          <p>과제 리뷰(20분) + 토론(25분) + Q&A(15분)</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-num">📝</div>
-          <h4>피드백 노트</h4>
-          <p>수퍼비전 후 피드백 노트 공유 + 심화 질문</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CURRICULUM -->
-  <section class="curriculum" id="curriculum">
-    <div class="container">
-      <span class="section-label reveal">Curriculum</span>
-      <h2 class="section-title reveal">6개월 커리큘럼</h2>
-      <p class="section-desc reveal">12회기, 월 2회(격주) 수퍼비전으로 기초부터 심화까지 체계적으로 성장합니다.</p>
-
-      <div class="curriculum-timeline">
-        <!-- 기초 -->
-        <div class="curriculum-phase reveal">
-          <div class="phase-label">
-            <span class="phase-tag basic">기초</span>
-            <p class="phase-period">Month 1-2</p>
-          </div>
-          <div class="phase-sessions">
-            <div class="session-card">
-              <div class="session-num">01</div>
-              <div class="session-info">
-                <h4>ABA 기초 원리 — 강화와 소거</h4>
-                <p>선정 논문 읽기 + 토론 아젠다 5개 질문 답변 작성</p>
-              </div>
-              <span class="session-type type-paper">논문 리뷰</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">02</div>
-              <div class="session-info">
-                <h4>행동 관찰 및 측정</h4>
-                <p>도전행동 시나리오(민준) → ABC 관찰 기록 + 빈도/지속시간 측정</p>
-              </div>
-              <span class="session-type type-practice">가상 실습</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">03</div>
-              <div class="session-info">
-                <h4>조작적 정의와 행동 측정 신뢰도</h4>
-                <p>민준이 행동 조작적 정의 작성 + IOA 계산 실습</p>
-              </div>
-              <span class="session-type type-paper">논문 리뷰</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">04</div>
-              <div class="session-info">
-                <h4>DTT (Discrete Trial Training) 기초</h4>
-                <p>DTT 절차 요약 + SD 제시 의사결정 시나리오 과제</p>
-              </div>
-              <span class="session-type type-skill">스킬 실습</span>
-            </div>
+          <div class="diff-item">
+            <h4>실제 케이스 없으면 할 게 없음</h4>
+            <p>센터에 다니지 않으면 논의할 케이스 자체가 없어 시간만 흘러갑니다.</p>
           </div>
         </div>
 
-        <!-- 중급 -->
-        <div class="curriculum-phase reveal">
-          <div class="phase-label">
-            <span class="phase-tag mid">중급</span>
-            <p class="phase-period">Month 3-4</p>
+        <!-- 훈스아카데미 -->
+        <div>
+          <div class="diff-col-label new">훈스아카데미</div>
+          <div class="diff-item highlight">
+            <h4>가상 시나리오로 어디서든 실습</h4>
+            <p>정교하게 설계된 가상 페르소나로 관찰, 측정, 중재를 직접 연습합니다.</p>
           </div>
-          <div class="phase-sessions">
-            <div class="session-card">
-              <div class="session-num">05</div>
-              <div class="session-info">
-                <h4>선호도 평가 — MSWO, Paired Choice</h4>
-                <p>민준이 케이스 선호도 평가 계획 작성</p>
-              </div>
-              <span class="session-type type-paper">논문 리뷰</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">06</div>
-              <div class="session-info">
-                <h4>BST (Behavior Skills Training)</h4>
-                <p>보호자 대상 강화 절차 BST 훈련 계획 + 역할극</p>
-              </div>
-              <span class="session-type type-skill">스킬 실습</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">07</div>
-              <div class="session-info">
-                <h4>기능분석 (FA) 개요</h4>
-                <p>FA 4가지 조건 조작적 정의 + 민준이 케이스 FA 적용</p>
-              </div>
-              <span class="session-type type-paper">논문 리뷰</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">08</div>
-              <div class="session-info">
-                <h4>FA 데이터 해석</h4>
-                <p>가상 FA 데이터셋 그래프 해석 + 행동 기능 판단 + 중재 방향 제안</p>
-              </div>
-              <span class="session-type type-practice">가상 실습</span>
-            </div>
+          <div class="diff-item highlight">
+            <h4>1:1 온라인 수퍼비전</h4>
+            <p>Zoom으로 진행하여 어디서든 참여 가능. 개인 맞춤 피드백을 받습니다.</p>
           </div>
-        </div>
-
-        <!-- 심화 -->
-        <div class="curriculum-phase reveal">
-          <div class="phase-label">
-            <span class="phase-tag adv">심화</span>
-            <p class="phase-period">Month 5-6</p>
+          <div class="diff-item highlight">
+            <h4>6개월 단계별 커리큘럼</h4>
+            <p>기초(관찰·측정) → 중급(평가·중재) → 심화(종합 케이스)까지 체계적으로.</p>
           </div>
-          <div class="phase-sessions">
-            <div class="session-card">
-              <div class="session-num">09</div>
-              <div class="session-info">
-                <h4>기능적 의사소통 훈련 (FCT)</h4>
-                <p>FA 결과 기반 FCT 중재 계획 + 촉구/용암 절차</p>
-              </div>
-              <span class="session-type type-skill">스킬 실습</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">10</div>
-              <div class="session-info">
-                <h4>차별강화 (DRA, DRO) 적용</h4>
-                <p>새 페르소나(하은) 중재 설계 + 가상 결과 데이터 분석</p>
-              </div>
-              <span class="session-type type-practice">가상 실습</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">11</div>
-              <div class="session-info">
-                <h4>일반화와 유지 전략</h4>
-                <p>민준 & 하은 케이스에 일반화 전략 적용 계획</p>
-              </div>
-              <span class="session-type type-paper">논문 리뷰</span>
-            </div>
-            <div class="session-card">
-              <div class="session-num">12</div>
-              <div class="session-info">
-                <h4>종합 케이스 스터디</h4>
-                <p>새 페르소나(준서) 전체 과정: 관찰 → 정의 → FA → 중재 → 데이터 → 수정</p>
-              </div>
-              <span class="session-type type-total">종합 실습</span>
-            </div>
+          <div class="diff-item highlight">
+            <h4>가상 케이스로 전체 과정 경험</h4>
+            <p>평가 → 중재 → 데이터 분석 → 수정까지, 실제 센터와 동일한 과정을 경험합니다.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OUTCOME -->
-  <section class="outcome" id="outcome">
-    <div class="container">
-      <span class="section-label reveal">Outcome</span>
-      <h2 class="section-title reveal">6개월 후, 당신은</h2>
-      <div class="outcome-grid">
-        <div class="outcome-card reveal">
-          <span class="outcome-emoji">📂</span>
-          <h4>실습 경험과 수퍼비전 기록</h4>
-          <p>ABA 핵심 스킬에 대한 체계적인 실습 경험과 수퍼비전 기록을 보유하게 됩니다.</p>
-        </div>
-        <div class="outcome-card reveal">
-          <span class="outcome-emoji">🔄</span>
-          <h4>전체 과정 경험</h4>
-          <p>평가 → 중재 → 데이터 분석 → 수정의 전체 과정을 가상 케이스를 통해 경험합니다.</p>
-        </div>
-        <div class="outcome-card reveal">
-          <span class="outcome-emoji">🧠</span>
-          <h4>실무적 사고방식</h4>
-          <p>자격시험(QBA/BCBA) 준비에 필요한 실무적 사고방식과 의사결정 능력을 갖춥니다.</p>
-        </div>
-        <div class="outcome-card reveal">
-          <span class="outcome-emoji">🚀</span>
-          <h4>현장 투입 기본기</h4>
-          <p>센터에 취업했을 때 바로 적용할 수 있는 실무 기본기가 준비됩니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <span class="section-label reveal">Pricing</span>
-      <h2 class="section-title reveal" style="text-align:center;">투자 비용</h2>
-      <p class="section-desc reveal" style="text-align:center; margin: 0 auto;">1기 베타 특별가로 시작하세요. 선착순 마감 후 정가로 전환됩니다.</p>
-      <div class="pricing-grid reveal">
-        <div class="pricing-card featured">
-          <div class="pricing-type">1:1 수퍼비전</div>
-          <div class="pricing-price">10만원 <small>/ 회</small></div>
-          <div class="pricing-original">정가 15만원</div>
-          <ul class="pricing-features">
-            <li>1:1 맞춤 수퍼비전 60분</li>
-            <li>월 2회 (격주) 진행</li>
-            <li>월 비용 20만원</li>
-            <li>개인별 피드백 노트</li>
-            <li>사전 학습 자료 제공</li>
-          </ul>
-          <a href="#cta" class="btn btn-primary" style="width:100%; justify-content:center;">신청하기</a>
-        </div>
-        <div class="pricing-card">
-          <div class="pricing-type">그룹 수퍼비전</div>
-          <div class="pricing-price">5만원 <small>/ 회</small></div>
-          <div class="pricing-original">정가 7만원/인</div>
-          <ul class="pricing-features">
-            <li>3~4명 소그룹 수퍼비전</li>
-            <li>월 2회 (격주) 진행</li>
-            <li>월 비용 10만원</li>
-            <li>동료와 함께 토론</li>
-            <li>사전 학습 자료 제공</li>
-          </ul>
-          <a href="#cta" class="btn btn-secondary" style="width:100%; justify-content:center;">신청하기</a>
         </div>
       </div>
     </div>
@@ -1255,47 +536,17 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <span class="section-label reveal">FAQ</span>
-      <h2 class="section-title reveal">자주 묻는 질문</h2>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-q">ABA 전공이 아니어도 참여할 수 있나요?</button>
-          <div class="faq-a"><p>ABA 대학원생이나 평생교육원 수강생을 주요 대상으로 하지만, ABA에 관심 있는 특수교사, 다른 분야 치료사도 참여 가능합니다. 사전 상담에서 적합성을 함께 확인합니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">실제 아동 없이 수퍼비전이 가능한가요?</button>
-          <div class="faq-a"><p>네, 정교하게 설계된 가상 페르소나와 시나리오를 활용합니다. 행동 관찰, 측정, 기능분석, 중재 설계까지 실제와 유사한 의사결정 과정을 연습할 수 있습니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">수퍼비전 시간은 어떻게 정하나요?</button>
-          <div class="faq-a"><p>Zoom으로 진행되며, 수퍼바이저와 협의하여 서로 편한 시간에 스케줄을 잡습니다. 격주 1회, 60분 진행됩니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">베타 가격은 언제까지 적용되나요?</button>
-          <div class="faq-a"><p>1기 선착순 모집 인원이 마감될 때까지 적용됩니다. 이후 2기부터는 정가로 전환됩니다.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">중도 포기 시 환불이 가능한가요?</button>
-          <div class="faq-a"><p>사전 상담에서 상세한 환불 정책을 안내해 드립니다. 시작 전 충분히 상담 후 결정하실 수 있습니다.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="cta" id="cta">
     <div class="container">
-      <span class="section-label reveal">Apply Now</span>
-      <h2 class="section-title reveal">지금 1기에 합류하세요</h2>
+      <span class="section-label reveal">Contact</span>
+      <h2 class="section-title reveal">관심이 있으시다면</h2>
       <p class="section-desc reveal">
-        6개월 뒤, 센터에 가서 바로 일할 수 있는 기본기를 갖추세요.<br>
-        1기 베타 모집은 선착순으로 마감됩니다.
+        1기 모집을 준비하고 있습니다.<br>
+        궁금한 점이나 상담을 원하시면 편하게 연락주세요.
       </p>
-      <a href="#" class="btn btn-cta reveal">
-        신청서 작성하기 (2분) <span class="btn-arrow">→</span>
+      <a href="mailto:myulcan@gmail.com" class="btn btn-cta reveal">
+        이메일로 문의하기 <span class="btn-arrow">→</span>
       </a>
     </div>
   </section>
@@ -1303,7 +554,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p>© 2026 훈스아카데미. All rights reserved. · <a href="mailto:myulcan@gmail.com">문의하기</a></p>
+      <p>&copy; 2026 훈스아카데미. All rights reserved. · <a href="mailto:myulcan@gmail.com">myulcan@gmail.com</a></p>
     </div>
   </footer>
 
@@ -1323,16 +574,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // FAQ toggle
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
   </script>
 
 </body>
